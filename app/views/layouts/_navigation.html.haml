@@ -1,0 +1,26 @@
+%nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
+  %a.navbar-brand.js-scroll-trigger{:href => "#page-top"}
+  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+    %span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav
+      %li.nav-item
+      %li.nav-item
+        = link_to 'JDIGram', root_path, class: "navbar-brand"
+      %li.nav-item
+        = link_to 'Profile', profiles_path, class: "nav-link js-scroll-trigger"
+      %li.nav-item
+        %a.nav-link.js-scroll-trigger{:href => "#friends"} Friends
+      %li.nav-item
+        %a.nav-link.js-scroll-trigger{:href => "#skills"} Skills
+      %li.nav-item
+        %a.nav-link.js-scroll-trigger{:href => "#interests"} Interests
+      %li.nav-item
+        .nickname_layout
+          %p.nav-link.js-scroll-trigger= current_user.nickname if user_signed_in?
+      %li.nav-item
+        .login_button_layout
+          - if user_signed_in?
+            = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "nav-link js-scroll-trigger"
+          - else
+            = link_to 'Sign in', new_user_session_path, class: "nav-link js-scroll-trigger"
