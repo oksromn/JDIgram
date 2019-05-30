@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.14.5'
 gem 'devise'
 gem 'haml-rails', '~> 2.0'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
