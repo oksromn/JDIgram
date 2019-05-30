@@ -4,7 +4,14 @@
   margin-left: 20px;
 }
 
-.navbuttonsign {
+.login_button_layout {
+  white-space: nowrap;
   position: absolute;
   right: 40px;
+}
+
+.nickname_layout {
+  white-space: nowrap;
+  position: absolute;
+  right: 140px;
 }
