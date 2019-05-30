@@ -5,9 +5,11 @@
       <table class="table">
         <tbody>
           <% @users.each do |user| %>
-            <tr>
-              <%= render user %>
-            </tr>
+
+            <p>nickname:<%= user.nickname %></p>
+            <p>firstname:<%= user.firstname %></p>
+            <%= render user %>
+
           <% end %>
         </tbody>
       </table>
