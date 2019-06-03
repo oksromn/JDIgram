@@ -1,0 +1,30 @@
+.signincontainer
+  = form_for @profile do |f|
+
+    .field
+      %br
+      = f.label :firstname
+      %br
+      = f.text_field :firstname, autofocus: true
+
+    .field
+      %br
+      = f.label :secondname
+      %br
+      = f.text_field :secondname, autofocus: true
+
+    .field
+      %br
+      = f.label :birthday
+      %br
+      = f.date_field :birthday, autofocus: true
+
+    .field
+      %br
+      = f.label :about
+      %br
+      = f.text_field :about, autofocus: true
+
+    .actions
+      %br
+      = f.submit "Update", class: "btn btn-primary"

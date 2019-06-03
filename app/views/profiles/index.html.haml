@@ -29,12 +29,14 @@
         %p.lead
           = current_user.nickname
           %br
-
+          = current_user.profile.firstname
           %br
-
+          = current_user.profile.secondname
           %br
-
+          = current_user.profile.birthday
+          %br
+          = current_user.profile.about	
     / About Section Button
     .text-center.mt-4
-      = link_to 'Редактировать', edit_user_registration_path, class: "btn btn-xl btn-outline-light"
+      = link_to 'Редактировать', edit_profile_path(current_user.profile), class: "btn btn-xl btn-outline-light"
     %br
