@@ -3,13 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-
-#gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-gem 'popper_js', '~> 1.14.5'
+gem 'popper_js'
 gem 'devise'
-gem 'haml-rails', '~> 2.0'
+gem 'haml-rails'
 gem 'bootstrap'
+gem 'erb2haml'
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'

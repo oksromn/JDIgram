@@ -8,7 +8,7 @@
       %li.nav-item
         = link_to 'JDIGram', root_path, class: "navbar-brand"
       %li.nav-item
-        = link_to 'Profile', profiles_path, class: "nav-link js-scroll-trigger"
+        = link_to 'Profile', profiles_path, class: "nav-link"
       %li.nav-item
         %a.nav-link.js-scroll-trigger{:href => "#friends"} Friends
       %li.nav-item
@@ -17,10 +17,11 @@
         %a.nav-link.js-scroll-trigger{:href => "#interests"} Interests
       %li.nav-item
         .nickname_layout
-          %p.nav-link.js-scroll-trigger= current_user.nickname if user_signed_in?
+          - if user_signed_in?
+            = link_to current_user.nickname, edit_user_registration_path, class: "btn btn-xl btn-outline-light"
       %li.nav-item
         .login_button_layout
           - if user_signed_in?
-            = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "nav-link js-scroll-trigger"
+            = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "btn btn-xl btn-outline-light"
           - else
-            = link_to 'Sign in', new_user_session_path, class: "nav-link js-scroll-trigger"
+            = link_to 'Sign in', new_user_session_path, class: "btn btn-xl btn-outline-light"

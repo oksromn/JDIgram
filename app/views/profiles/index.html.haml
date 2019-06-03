@@ -23,15 +23,17 @@
           Фамилия:
           %br
           Дата рождения:
+          %br
+          О себе:
       .col-lg-4.mr-auto
         %p.lead
           = current_user.nickname
           %br
-          = current_user.firstname
+
           %br
-          = current_user.secondname
+
           %br
-          = current_user.birthday
+
     / About Section Button
     .text-center.mt-4
       = link_to 'Редактировать', edit_user_registration_path, class: "btn btn-xl btn-outline-light"

@@ -15,7 +15,9 @@ class ProfilesTest < ApplicationSystemTestCase
     click_on "New Profile"
 
     fill_in "About", with: @profile.about
-    fill_in "Image", with: @profile.image
+    fill_in "Birthday", with: @profile.birthday
+    fill_in "Firstname", with: @profile.firstname
+    fill_in "Secondname", with: @profile.secondname
     click_on "Create Profile"
 
     assert_text "Profile was successfully created"
@@ -27,7 +29,9 @@ class ProfilesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "About", with: @profile.about
-    fill_in "Image", with: @profile.image
+    fill_in "Birthday", with: @profile.birthday
+    fill_in "Firstname", with: @profile.firstname
+    fill_in "Secondname", with: @profile.secondname
     click_on "Update Profile"
 
     assert_text "Profile was successfully updated"
