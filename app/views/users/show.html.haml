@@ -1,0 +1,35 @@
+.user-profile
+  .profile.row
+    .col-md-4.avatar
+      .wrapper
+        = image_tag (current_user.profile.photo_url(:thumb)) if current_user.profile.photo?
+    /никнейм
+    .col-md-8.basic-info
+      .user-wrapper
+        %h2.username= current_user.nickname
+        /кнопка изменения профиля
+        %a.edit-profile
+          %a.edit-profile{href: edit_profile_path(current_user.profile)}
+            %button Edit Profile
+      /строка постов, подписчиков, подписок
+      %ul.posts
+        %li
+          %span 12
+          posts
+        %li
+          %span 195
+          followers
+        %li
+          %span 345
+          following
+      /имя и описание
+      %h2.name= current_user.profile.firstname + ' ' + current_user.profile.secondname
+      %a.about= current_user.profile.about
+
+.user-tabs
+  %a.tab.active{href: '#'}
+    Posts
+  %a.tab{href: '#'}
+    Liked
+  %a.tab{href: '#'}
+    Saved

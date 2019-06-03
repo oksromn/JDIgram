@@ -1,4 +1,5 @@
 @import 'bootstrap';
+@import 'users';
 
 .signincontainer {
   margin-left: 20px;
@@ -27,3 +28,11 @@
   position: relative;
   top: 130px;
 }
+
+.search-form{
+  position: relative;
+  left: 100%;
+  input{
+    font-size: 13px;
+    text-align: center;
+  }}

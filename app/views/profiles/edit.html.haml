@@ -17,7 +17,7 @@
       %br
       = f.label :birthday
       %br
-      = f.date_field :birthday, autofocus: true
+      = f.date_select :birthday, autofocus: true
 
     .field
       %br
@@ -26,7 +26,8 @@
       = f.text_field :about, autofocus: true
 
     .field
-
+      %br
+      Photo
       %br
       = f.file_field :photo
 
