@@ -10,7 +10,7 @@
       %li.nav-item
         = link_to 'Profile', (user_path(current_user) if user_signed_in?), class: "nav-link"
       %li.nav-item
-        %a.nav-link.js-scroll-trigger{:href => "#friends"} Friends
+        = link_to 'Post', new_post_path, class: "nav-link"
       %li.nav-item
         %a.nav-link.js-scroll-trigger{:href => users_path} Skills
       %li.nav-item

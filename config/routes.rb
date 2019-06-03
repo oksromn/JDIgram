@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
   resources :users, only: [:index, :show, :edit, :update]
+  resources :posts, only: [:new, :create]
 end

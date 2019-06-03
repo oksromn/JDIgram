@@ -11,6 +11,18 @@
 
 %img.homeimage.rounded.mx-auto.d-block{:alt => "png", :src => "https://www.hubspot.com/hubfs/assets/hubspot.com/home/2018/Integrations_Illustration@2x.png"}
 
+.posts2
+  - @posts.each do |post|
+    %section.post
+      .user
+        .avatar
+          %img{src: post.user.profile.photo_url}
+        .username
+          = post.user.nickname
+      = image_tag post.image, class: 'main-image'
+      .description
+        = post.description
+
 
 %footer.footer.text-center.bg-dark.text-white.mb-0
   .container
