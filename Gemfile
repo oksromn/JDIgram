@@ -9,6 +9,8 @@ gem 'devise'
 gem 'haml-rails'
 gem 'bootstrap'
 gem 'erb2haml'
+gem 'carrierwave'
+gem 'rmagick'
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'

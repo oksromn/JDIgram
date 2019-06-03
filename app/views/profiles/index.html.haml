@@ -25,6 +25,7 @@
           Дата рождения:
           %br
           О себе:
+          %br
       .col-lg-4.mr-auto
         %p.lead
           = current_user.nickname
@@ -35,8 +36,12 @@
           %br
           = current_user.profile.birthday
           %br
-          = current_user.profile.about	
+          = current_user.profile.about
+          %br
     / About Section Button
     .text-center.mt-4
+      = image_tag (current_user.profile.photo_url(:thumb)) if current_user.profile.photo?
+      %br
+      %br
       = link_to 'Редактировать', edit_profile_path(current_user.profile), class: "btn btn-xl btn-outline-light"
     %br

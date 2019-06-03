@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_063735) do
     t.string "secondname"
     t.date "birthday"
     t.text "about"
+    t.text "photo"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
