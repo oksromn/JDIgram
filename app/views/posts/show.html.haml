@@ -1,0 +1,17 @@
+.post-show.row
+  .col-md-8
+    = image_tag @post.image, class: 'main-image'
+  .col-md-4
+    .user
+      .avatar
+        - if @post.user.profile.photo?
+          = link_to user_path(@post.user) do
+            = image_tag @post.user.profile.photo_url
+      = link_to @post.user.nickname, user_path(@post.user), class: 'username'
+    .description
+      = @post.description
+      .delete
+        %br
+        - if current_user.posts.exists?(@post.id)
+          = link_to 'Remove', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }
+
