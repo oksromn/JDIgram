@@ -1,7 +1,7 @@
 .signincontainer
   = form_for Post.new do |f|
     .form-group
-      = f.text_field :description
+      = f.text_field :description, class: 'inputt'
     .form-group
       = f.file_field :image
     .form-group

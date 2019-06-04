@@ -24,22 +24,22 @@
         = post.description
 
 
+
+
+
 %footer.footer.text-center.bg-dark.text-white.mb-0
   .container
     %br
     .row
       / Footer Location
       .col-lg-4.mb-5.mb-lg-0
-        %h4.text-uppercase.mb-4 Location
         %p.lead.mb-0
           © 2019 JDILab.
-          = succeed "Taganrog" do
-            %br
       / Footer Social Icons
       .col-lg-4.mb-5.mb-lg-0
-        %h4.text-uppercase.mb-4 Around the Web
+        -#%a.btn.btn-outline-light.btn-social.mx-1{:href => "#"}
         %a.btn.btn-outline-light.btn-social.mx-1{:href => "#"}
-          %i.fab.fa-fw.fa-facebook-f
+          %i.fab.fa-fw.fa-facebook
         %a.btn.btn-outline-light.btn-social.mx-1{:href => "#"}
           %i.fab.fa-fw.fa-twitter
         %a.btn.btn-outline-light.btn-social.mx-1{:href => "#"}
@@ -48,7 +48,6 @@
           %i.fab.fa-fw.fa-dribbble
       / Footer About Text
       .col-lg-4
-        %h4.text-uppercase.mb-4 About App
         %p.lead.mb-0
           Just look at my
           = succeed "." do
