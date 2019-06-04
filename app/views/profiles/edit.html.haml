@@ -29,7 +29,10 @@
       %br
       Photo
       %br
-      = f.file_field :photo
+      = f.file_field :photo, :onchange => "readURL(this)"
+      %br
+      %br
+      %img#img_prev
 
     .actions
       %br
