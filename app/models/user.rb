@@ -6,7 +6,9 @@ class User < ApplicationRecord
 
   has_one :profile
   before_create :build_default_profile
-  has_many :user, dependent: :destroy
+
+  has_many :posts, dependent: :destroy
+
   validates :nickname, presence: true
 
   private

@@ -36,3 +36,9 @@
     Liked
   %a.tab{href: '#'}
     Saved
+
+.user-images
+  - @posts.each do |post|
+    .wrapper
+      =# link_to post_path(post) do
+      = image_tag post.image

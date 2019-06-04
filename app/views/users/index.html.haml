@@ -1,3 +1,5 @@
 .signincontainer
   - @users.each do |user|
-    .div= user.nickname
+    .div
+      = link_to user_path(user) do
+        = user.nickname
