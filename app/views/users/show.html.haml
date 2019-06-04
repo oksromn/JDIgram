@@ -2,15 +2,17 @@
   .profile.row
     .col-md-4.avatar
       .wrapper
-        - if current_user.profile.photo?
-          = image_tag current_user.profile.photo_url(:thumb)
+        - if @user.profile.photo?
+          = image_tag @user.profile.photo_url(:thumb)
 
     .col-md-8.basic-info
       .user-wrapper
-        %h2.username= current_user.nickname
-        %a.edit-profile
-          %a.edit-profile{href: edit_profile_path(current_user.profile)}
-            %button Edit Profile
+        %h2.username= @user.nickname
+
+        - if @user.id == current_user.id
+          %a.edit-profile
+            %a.edit-profile{href: edit_profile_path(current_user.profile)}
+              %button Edit Profile
 
       %ul.posts
         %li
@@ -23,9 +25,9 @@
           %span 345
           following
       /имя и описание
-      - if current_user.profile.firstname? && current_user.profile.secondname?
-        %h2.name= current_user.profile.firstname + ' ' + current_user.profile.secondname
-        %a.about= current_user.profile.about
+      - if @user.profile.firstname? && @user.profile.secondname?
+        %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
+        %a.about= @user.profile.about
 
 .user-tabs
   %a.tab.active{href: '#'}

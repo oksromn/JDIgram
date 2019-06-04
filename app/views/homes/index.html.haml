@@ -16,9 +16,12 @@
     %section.post
       .user
         .avatar
-          %img{src: post.user.profile.photo_url}
+
+          = link_to user_path(post.user) do
+            %img{src: post.user.profile.photo_url}
         .username
-          = post.user.nickname
+          = link_to user_path(post.user), {style: 'color:#262626;'} do
+            = post.user.nickname
       = image_tag post.image, class: 'main-image'
       .description
         = post.description
