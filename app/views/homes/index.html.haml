@@ -16,18 +16,18 @@
     %section.post
       .user
         .avatar
-
           = link_to user_path(post.user) do
             %img{src: post.user.profile.photo_url}
         .username
           = link_to user_path(post.user), {style: 'color:#262626;'} do
             = post.user.nickname
-      = image_tag post.image, class: 'main-image'
+      = link_to post_path(post) do
+        = image_tag post.image, class: 'main-image'
       .description
         = post.description
-
-
-
+        .likeshomes
+          = post.likes.count
+          %i.fas.fa-heart
 
 
 %footer.footer.text-center.bg-dark.text-white.mb-0
@@ -55,4 +55,3 @@
           Just look at my
           = succeed "." do
             %a{:href => "https://github.com/oksromn/JDIgram", :target => "_blank"} GitHub
-        %br
