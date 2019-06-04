@@ -1,32 +1,31 @@
 %nav#sideNav.navbar.navbar-expand-lg.navbar-dark.bg-primary.fixed-top
-  %a.navbar-brand.js-scroll-trigger{:href => "#page-top"}
-  %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-    %span.navbar-toggler-icon
-  #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav
-      %li.nav-item
-      %li.nav-item
-        = link_to 'JDIGram', root_path, class: "navbar-brand"
-      %li.nav-item
-        = link_to 'Profile', (user_path(current_user) if user_signed_in?), class: "nav-link"
-      %li.nav-item
-        = link_to 'Post', new_post_path, class: "nav-link"
-      %li.nav-item
-        %a.nav-link.js-scroll-trigger{:href => users_path} Skills
-      %li.nav-item
-        %a.nav-link.js-scroll-trigger{:href => "#interests"} Interests
-      / search
-      .m-auto
-        %form.form-inline.search-form
-          %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "@search", :type => "search"}
+  %ul.navbar-nav
+    %li.nav-item
+    %li.nav-item
+      = link_to 'JDIGram', root_path, class: "navbar-brand"
+    %li.nav-item
+      = link_to 'Profile', (user_path(current_user) if user_signed_in?), class: "nav-link"
+    %li.nav-item
+      = link_to 'Post', new_post_path, class: "nav-link"
+    %li.nav-item
+      = link_to 'Users', users_path, class: "nav-link"
+    %li.nav-item
+      %a.nav-link.js-scroll-trigger{:href => "#interests"} Interests
 
-      %li.nav-item
-        .nickname_layout
-          - if user_signed_in?
-            = link_to current_user.nickname, edit_user_registration_path, class: "btn btn-xl btn-outline-light"
-      %li.nav-item
-        .login_button_layout
-          - if user_signed_in?
-            = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "btn btn-xl btn-outline-light"
-          - else
-            = link_to 'Sign in', new_user_session_path, class: "btn btn-xl btn-outline-light"
+    / search
+    .m-auto
+      .form-inline.search-form
+        = form_tag users_path, method: :get do
+          = text_field_tag :q, nil, placeholder: '@search'
+
+
+    %li.nav-item
+      .nickname_layout
+        - if user_signed_in?
+          = link_to current_user.nickname, edit_user_registration_path, class: "btn btn-xl btn-outline-light"
+    %li.nav-item
+      .login_button_layout
+        - if user_signed_in?
+          = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "btn btn-xl btn-outline-light"
+        - else
+          = link_to 'Sign in', new_user_session_path, class: "btn btn-xl btn-outline-light"

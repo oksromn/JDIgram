@@ -1,5 +1,10 @@
-.signincontainer
-  - @users.each do |user|
-    .div
-      = link_to user_path(user) do
-        = user.nickname
+- @users.each do |user|
+  .users-show.row
+    .col-md-4
+      .user
+        .avatar
+          - if user.profile.photo?
+            = link_to user_path(user) do
+              = image_tag user.profile.photo_url
+        = link_to user.nickname, user_path(user), class: 'username'
+

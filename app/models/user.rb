@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+  #include Elasticsearch::Model
+  #include Elasticsearch::Model::Callbacks
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -10,6 +12,9 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   validates :nickname, presence: true
+
+
+  searchkick
 
   private
   def build_default_profile

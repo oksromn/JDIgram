@@ -13,6 +13,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.8.1'
 
+#gem 'elasticsearch-model'
+#gem 'elasticsearch-rails'
+gem 'searchkick'
 
 
 gem 'rails', '~> 5.2.3'
@@ -30,6 +33,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rb-readline'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
