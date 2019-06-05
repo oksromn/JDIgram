@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   before_action :set_params
 
   def create
-    @comment = @post.comments.build(comments_params)
+    @comment = @post.comments.create(comments_params)
+    @comment.user = current_user
     if @comment.save
       redirect_to post_path(@post), notice: 'Comment success'
     end
@@ -23,6 +24,6 @@ class CommentsController < ApplicationController
     end
 
     def comments_params
-      params.require(:comment).permit(:comment)
+      params.require(:comment).permit(:comment, :post_id)
     end
 end

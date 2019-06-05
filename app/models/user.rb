@@ -7,6 +7,7 @@ class User < ApplicationRecord
   before_create :build_default_profile
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   validates :nickname, presence: true
 

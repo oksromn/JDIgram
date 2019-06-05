@@ -31,4 +31,16 @@
   =button_to 'Comment', new_post_comment_path(@post), method: :get, class: 'btn btn-primary'
 
 
-= render @post.comments
+
+  = render @post.comments
+
+
+  -#- if @comments
+  -#  - @comments.each do |comment|
+  -#    - puts 'AAAAAA'
+  -#    - puts comment.inspect
+  -#    - puts comment.user.inspect
+  -#    - puts 'AAAAAA'
+  -#
+  -#    %h3= comment.user.nickname
+  -#    %h3= comment.comment
