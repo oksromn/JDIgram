@@ -1,5 +1,5 @@
 .p-3.mb-2.bg-dark.text-white.commtext
-  = link_to user_path(@post.user), {style: 'color:#FFFFFF;'} do
+  = link_to user_path(comment.user), {style: 'color:#FFFFFF;'} do
     = comment.user.nickname
   %span :
   = comment.comment
