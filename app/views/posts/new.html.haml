@@ -1,12 +1,18 @@
 .signincontainer
   = form_for Post.new do |f|
-    .form-group
-      = f.text_field :description, class: 'inputt'
-    .form-group
+    .input-group
+      .input-group-prepend
+        %span.input-group-text Description
+        = f.text_area :description, class: 'form-control', size: '40x4'
+    .formfile
       = f.file_field :image, :onchange => "readURL(this)"
-      %img#img_prev
+      %br
+      %br
+      .rounded
+        %img#img_prev
+
     .form-group
       = f.text_field :user_id, value: current_user.id, class:'d-none'
     %br/
     .actions
-      = f.submit 'Create Post', class: 'btn btn-primary'
+      = f.submit 'Create post', class: 'btn btn-primary'

@@ -28,7 +28,8 @@
         .likeshomes
           = post.likes.count
           %i.fas.fa-heart
-
+          = post.comments.count
+          %i.fas.fa-comment-alt
 
 %footer.footer.text-center.bg-dark.text-white.mb-0
   .container

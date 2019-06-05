@@ -1,8 +1,5 @@
 class User < ApplicationRecord
 
-  #include Elasticsearch::Model
-  #include Elasticsearch::Model::Callbacks
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -13,13 +10,12 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-
   searchkick
 
   private
-  def build_default_profile
-    build_profile
-    true
-  end
+    def build_default_profile
+      build_profile
+      true
+    end
 
 end

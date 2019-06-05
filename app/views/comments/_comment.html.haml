@@ -1,0 +1,9 @@
+.p-3.mb-2.bg-dark.text-white.commtext
+  =# link_to user_path(@post.user), {style: 'color:#FFFFFF;'} do
+  -#testnick
+  %span :
+  = comment.comment
+  %br
+  - if current_user.id == @post.user.id
+    %span
+      = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}

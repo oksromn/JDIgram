@@ -1,0 +1,10 @@
+.signincontainer
+  = form_for ([@post, @post.comments.build]) do |f|
+    .input-group
+      .input-group-prepend
+        %span.input-group-text Comment
+        = f.text_area :comment, class: 'form-control', size: '60x3'
+        = f.text_area :user_id, value: current_user.id, class:'d-none'
+    .action
+      %br
+      = f.submit 'Create comment', class: 'btn btn-primary'

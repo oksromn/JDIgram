@@ -18,6 +18,9 @@
 .likes
   = @post.likes.count
   %i.fas.fa-heart
+  = @post.comments.count
+  %i.fas.fa-comment-alt
+
   %br
   - pre_like = @post.likes.find { |like| like.user_id == current_user.id}
   - if pre_like
@@ -25,4 +28,7 @@
   - else
     = button_to 'Like', post_likes_path(@post), method: :post, class: 'btn btn-primary'
 
-=# button_to 'Like', post_likes_path(@post), method: :post, class: 'btn btn-primary'
+  =button_to 'Comment', new_post_comment_path(@post), method: :get, class: 'btn btn-primary'
+
+
+= render @post.comments
