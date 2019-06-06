@@ -31,6 +31,10 @@
           .dropdown-divider
           %a.dropdown-item{href: "https://github.com/oksromn/JDIgram"} Look at my GitHub
 
+      %li.nav-item
+        %a.nav-link.disabled{"aria-disabled" => "true", href: current_user.nickname, :tabindex => "-1"}
+          = current_user.nickname
+
       %li.nav-item.active.my-auto
         - if user_signed_in?
           = link_to 'Sign out', destroy_user_session_path, :method=>'delete', class: "btn btn-xl"
@@ -38,6 +42,7 @@
           = link_to 'Sign in', new_user_session_path, class: "btn btn-xl"
 
 
-    %form.form-inline.my-2.my-lg-0
-      %input.form-control.mr-sm-2{"aria-label" => "Search", :placeholder => "Search", :type => "search"}
-      %button.btn.btn-outline-success.my-2.my-sm-0{:type => "submit"} Search
+    .form-inline.my-2.my-lg-0
+      = form_tag users_path, method: :get do
+        = text_field_tag :q, nil, class: 'form-control mr-sm-2', placeholder: '@search'
+      %button.btn.btn-outline-dark.my-2.my-sm-0{:type => "submit"} Search

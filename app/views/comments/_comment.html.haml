@@ -1,6 +1,6 @@
 .mx-auto{:style => "width: 575px;"}
   .container
-    .d-flex.align-self-end
+    .d-flex.justify-content-between.align-items-center
       .card{:style => "width: 505px;"}
         .card-header
           = link_to user_path(comment.user), {style: 'color: gray;'} do
@@ -9,6 +9,5 @@
           %p.card-text
             = comment.comment
           - if current_user.id == comment.user.id
-            %span{style: 'color: gray;'}
-              = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}
+            = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}
 %br

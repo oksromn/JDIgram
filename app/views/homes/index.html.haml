@@ -14,12 +14,12 @@
             = post.user.nickname
       = link_to post_path(post) do
         = image_tag post.image, class: 'main-image'
-      .description
-        = post.description
-        .likeshomes
+      .d-flex.justify-content-between.align-items-between
+        .description.font-weight-lighter
+          = post.description
+        .description.text-muted
           = post.likes.count
           %i.fas.fa-heart
           = post.comments.count
           %i.fas.fa-comment-alt
 
-=# render 'footer'
