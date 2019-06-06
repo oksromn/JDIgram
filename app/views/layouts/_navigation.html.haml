@@ -32,8 +32,9 @@
           %a.dropdown-item{href: "https://github.com/oksromn/JDIgram"} Look at my GitHub
 
       %li.nav-item
-        %a.nav-link.disabled{"aria-disabled" => "true", href: current_user.nickname, :tabindex => "-1"}
-          = current_user.nickname
+        - if user_signed_in?
+          %a.nav-link.disabled{"aria-disabled" => "true", href: current_user.nickname, :tabindex => "-1"}
+            = current_user.nickname
 
       %li.nav-item.active.my-auto
         - if user_signed_in?
