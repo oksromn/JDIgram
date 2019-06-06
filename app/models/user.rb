@@ -13,6 +13,12 @@ class User < ApplicationRecord
 
   searchkick
 
+  has_many :messages
+  has_many :subscriptions
+  has_many :chats, through: :subscriptions
+
+
+
   private
     def build_default_profile
       build_profile

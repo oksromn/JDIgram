@@ -1,0 +1,7 @@
+.input-group.mb-3
+  = form_for message, remote: true, authenticity_token: true do |f|
+    .input-group-prepend
+      %button#button-addon1.btn.btn-outline-secondary{:type => "f.submit"} Send
+      = f.text_area :content, data: {textarea: "message"}, cols: "50", rows: "4"
+      = f.hidden_field :chat_id, value: chat.id
+
