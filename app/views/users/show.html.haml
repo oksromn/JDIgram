@@ -3,17 +3,13 @@
     .col-md-4.avatar
       .wrapper
         - if @user.profile.photo?
-          = image_tag @user.profile.photo_url(:thumb)
+          = image_tag @user.profile.photo_url(:thumb), class: 'rounded', style: 'height: 200px; width: auto;'
 
     .col-md-8.basic-info
       .user-wrapper
         %h2.username= @user.nickname
 
-
-
         = render 'friendbutton'
-
-
 
       %ul.posts
         %li
@@ -25,11 +21,15 @@
         %li
           %span 345
           following
-      /имя и описание
+
       - if @user.profile.firstname? && @user.profile.secondname?
         %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
         %a.about= @user.profile.about
 
+
+%br
+%br
+  %br
 .user-tabs
   %a.tab.active{href: '#'}
     Posts

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, except: :index
+  before_action :set_user, except: [:index, :index_friends]
 
   def index
     if params[:q].present?
@@ -45,6 +45,9 @@ class UsersController < ApplicationController
   end
 
 
+  def index_friends
+    @myfriends = current_user.friends
+  end
 
   private
     def set_user

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get :destroy_friend_request, on: :member
     get :accept_friend_request, on: :member
     get :remove_friend, on: :member
+    get :index_friends, on: :collection
     resources :chats
   end
 

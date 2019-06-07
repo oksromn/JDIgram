@@ -1,0 +1,13 @@
+.container.text-center.mx-auto{:style => "width: 400px;"}
+
+  - @myfriends.each do |myfriend|
+    .card.shadow.p-3.mb-5.bg-white.rounded{:style => "width: 18rem; margin: 15px;"}
+      = link_to user_path(myfriend) do
+        %img.card-img-top{:alt => "...", :src => myfriend.profile.photo}
+      .card-body
+        %p.card-text
+          = myfriend.nickname
+
+
+
+
