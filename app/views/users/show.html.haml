@@ -11,15 +11,15 @@
           %ul
             %span{ class: 'font-weight-bold' }
               #{@user.posts.count}
-            %span{ style: "margin-right: 15px;" } posts
+            %small.text-muted{ style: "margin-right: 15px;" } posts
 
             %span{ class: 'font-weight-bold' }
-              195
-            %span{ style: "margin-right: 15px;" } followers
+              #{@user.friends.count}
+            %small.text-muted{ style: "margin-right: 15px;" } friends
 
             %span{ class: 'font-weight-bold' }
-              347
-            %span{ style: "margin-right: 15px;" } following
+              #{@user.requested_friends.count}
+            %small.text-muted{ style: "margin-right: 15px;" } following
 
           = render 'friendbutton'
 
@@ -31,11 +31,25 @@
 
 
         %p.card-text
-          %small.text-muted Last updated 3 mins ago
+          %small.text-muted
+            = @user.last_sign_in_at
+            = current_user.current_sign_in_at
+
+.user-tabs
+  %a.tab.active{href: '#'}
+    Posts
+  %a.tab{href: '#'}
+    Liked
+  %a.tab{href: '#'}
+    Saved
+%br
 
 
-
-
+.d-flex.justify-content-between.align-items-between
+  - @posts.each do |post|
+    .container{style: 'width: auto'}
+      = link_to post_path(post) do
+        = image_tag post.image, style: 'height: 200px; width: auto'
 
 
 

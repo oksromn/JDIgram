@@ -20,6 +20,8 @@
       %li.nav-item.active
         %a.nav-link{href: index_friends_users_path}
           Friends
+          - if current_user.requested_friends.count != 0
+            %span.badge #{current_user.requested_friends.count}
 
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}

@@ -1,13 +1,25 @@
-.container.text-center.mx-auto{:style => "width: 400px;"}
-
+.text-center
+  %h5 My friends
+.card-group
   - @myfriends.each do |myfriend|
-    .card.shadow.p-3.mb-5.bg-white.rounded{:style => "width: 18rem; margin: 15px;"}
-      = link_to user_path(myfriend) do
-        %img.card-img-top{:alt => "...", :src => myfriend.profile.photo}
-      .card-body
-        %p.card-text
-          = myfriend.nickname
+    .container.text-center{ style:  'width: 350px;' }
+      .card.shadow.p-3.mb-5.bg-white.rounded{style: "margin: 15px;"}
+        = link_to user_path(myfriend) do
+          %img.card-img-top{src: myfriend.profile.photo, style: 'height: 200px; width: auto'}
+        .card-body
+          %p.card-text
+            = myfriend.nickname
 
+.text-center
+  %h5 Requests
+  - @myrequests.each do |myrequest|
+    .container.text-center{ style:  'width: 350px;' }
+      .card.shadow.p-3.mb-5.bg-white.rounded{ style: "margin: 15px;" }
+        = link_to user_path(myrequest) do
+          %img.card-img-top{src: myrequest.profile.photo}
+        .card-body
+          %p.card-text
+            = myrequest.nickname
 
 
 

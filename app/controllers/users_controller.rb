@@ -47,6 +47,7 @@ class UsersController < ApplicationController
 
   def index_friends
     @myfriends = current_user.friends
+    @myrequests = current_user.requested_friends
   end
 
   private
