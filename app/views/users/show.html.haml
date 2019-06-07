@@ -1,45 +1,98 @@
-.user-profile
-  .profile.row
-    .col-md-4.avatar
-      .wrapper
-        - if @user.profile.photo?
-          = image_tag @user.profile.photo_url(:thumb), class: 'rounded', style: 'height: 200px; width: auto;'
+.card.mb-3.mx-auto{ style: "max-width: 1500px;" }
+  .row.no-gutters
+    .col-md-4
+      - if @user.profile.photo?
+        = image_tag @user.profile.photo_url(:thumb), class: 'card-img-left rounded', style: 'height: 300px; width: auto;'
+    .col-md-8
+      .card-body
+        .card-title.d-flex.justify-content-between.align-items-between
+          %h5{class: 'font-italic'} @ #{@user.nickname}
 
-    .col-md-8.basic-info
-      .user-wrapper
-        %h2.username= @user.nickname
+          %ul
+            %span{ class: 'font-weight-bold' }
+              #{@user.posts.count}
+            %span{ style: "margin-right: 15px;" } posts
 
-        = render 'friendbutton'
+            %span{ class: 'font-weight-bold' }
+              195
+            %span{ style: "margin-right: 15px;" } followers
 
-      %ul.posts
-        %li
-          %span= @user.posts.count
-          posts
-        %li
-          %span 195
-          followers
-        %li
-          %span 345
-          following
+            %span{ class: 'font-weight-bold' }
+              347
+            %span{ style: "margin-right: 15px;" } following
 
-      - if @user.profile.firstname? && @user.profile.secondname?
-        %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
-        %a.about= @user.profile.about
+          = render 'friendbutton'
+
+        %p.card-text
+          %br
+          - if @user.profile.firstname? && @user.profile.secondname?
+            %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
+            .about{class: 'font-weight-lighter'}= @user.profile.about
 
 
-%br
-%br
-  %br
-.user-tabs
-  %a.tab.active{href: '#'}
-    Posts
-  %a.tab{href: '#'}
-    Liked
-  %a.tab{href: '#'}
-    Saved
+        %p.card-text
+          %small.text-muted Last updated 3 mins ago
 
-.user-images
-  - @posts.each do |post|
-    .wrapper
-      = link_to post_path(post) do
-        = image_tag post.image
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-#.user-profile
+-#  .profile.row
+-#    .col-md-4.avatar
+-#      .wrapper
+-#        - if @user.profile.photo?
+-#          = image_tag @user.profile.photo_url(:thumb), class: 'rounded', style: 'height: 200px; width: auto;'
+-#
+-#    .col-md-8.basic-info
+-#      .user-wrapper
+-#        %h2.username= @user.nickname
+-#
+-#        = render 'friendbutton'
+-#
+-#      %ul.posts
+-#        %li
+-#          %span= @user.posts.count
+-#          posts
+-#        %li
+-#          %span 195
+-#          followers
+-#        %li
+-#          %span 345
+-#          following
+-#
+-#      - if @user.profile.firstname? && @user.profile.secondname?
+-#        %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
+-#        %a.about= @user.profile.about
+-#
+-#
+-#%br
+-#%br
+-#  %br
+-#.user-tabs
+-#  %a.tab.active{href: '#'}
+-#    Posts
+-#  %a.tab{href: '#'}
+-#    Liked
+-#  %a.tab{href: '#'}
+-#    Saved
+-#
+-#.user-images
+-#  - @posts.each do |post|
+-#    .wrapper
+-#      = link_to post_path(post) do
+-#        = image_tag post.image

@@ -6,8 +6,9 @@
           = link_to user_path(comment.user), {style: 'color: gray;'} do
             = comment.user.nickname
         .card-body
-          %p.card-text
-            = comment.comment
-          - if current_user.id == comment.user.id
-            = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}
+          .d-flex.justify-content-between.align-items-center
+            .card-text
+              = comment.comment
+            - if current_user.id == comment.user.id
+              = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}, class: 'btn btn-outline-dark btn-sm'
 %br

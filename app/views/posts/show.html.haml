@@ -21,8 +21,14 @@
                 - else
                   = link_to 'Like', post_likes_path(@post), method: :post, class: 'btn btn-outline-dark'
 
-              .btn-outline-secondary
+              .btn-outline-secondary{:style => "margin-right: 10px;"}
                 =link_to 'Comment', new_post_comment_path(@post), method: :get, class: 'btn btn-outline-dark'
+
+              .btn-outline-secondary
+                - if current_user == @post.user
+                  = link_to 'Remove', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-dark'
+
+
             .text-muted
               = @post.likes.count
               %i.fas.fa-heart

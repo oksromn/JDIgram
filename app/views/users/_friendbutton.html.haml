@@ -1,21 +1,21 @@
 - if @user.id == current_user.id
   %a.edit-profile
     %a.edit-profile{href: edit_profile_path(current_user.profile)}
-      %button Edit Profile
+      %button{class: 'btn btn-outline-primary btn-sm'} Edit Profile
 
 - else
   - if current_user.friends.include? @user
     %a.edit-profile{ href: remove_friend_user_path }
-      %button Friend
+      %button{class: 'btn btn-outline-primary btn-sm'} Friend
   - else
     - if current_user.pending_friends.include? @user
       %a.edit-profile{ href: destroy_friend_request_user_path }
-        %button Request Send
+        %button{class: 'btn btn-outline-primary btn-sm'} Request Send
 
     - if current_user.requested_friends.include? @user
       %a.edit-profile{ href: accept_friend_request_user_path }
-        %button Accept Request
+        %button{class: 'btn btn-outline-primary btn-sm'} Accept Request
 
     - if (!current_user.pending_friends.include? @user) && (!current_user.requested_friends.include? @user)
       %a.edit-profile{ href: create_friend_request_user_path }
-        %button Add Friend
+        %button{class: 'btn btn-outline-primary btn-sm'} Add Friend

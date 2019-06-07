@@ -1,4 +1,4 @@
-.signincontainer
+.container.mx-auto{:style => "width: 600px;"}
   = form_for Post.new do |f|
     .input-group
       .input-group-prepend
@@ -6,13 +6,15 @@
         = f.text_area :description, class: 'form-control', size: '40x4'
     .formfile
       = f.file_field :image, :onchange => "readURL(this)"
+    .actions
+      %br
+      = f.submit 'Create post', class: 'btn btn-outline-dark'
       %br
       %br
-      .rounded
-        %img#img_prev
+    .rounded.mx-auto{:style => "width: 100%;"}
+      %img#img_prev{height: '350px', width: 'auto', class: 'shadow p-3 mb-5 bg-white rounded'}
 
     .form-group
       = f.text_field :user_id, value: current_user.id, class:'d-none'
-    %br/
-    .actions
-      = f.submit 'Create post', class: 'btn btn-primary'
+
+

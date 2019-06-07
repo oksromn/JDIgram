@@ -2,24 +2,29 @@
 
 = yield
 
-.posts2
-  - @posts.each do |post|
-    %section.post
-      .user
-        .avatar
-          = link_to user_path(post.user) do
-            %img{src: post.user.profile.photo_url}
-        .username
-          = link_to user_path(post.user), {style: 'color:#262626;'} do
-            = post.user.nickname
-      = link_to post_path(post) do
-        = image_tag post.image, class: 'main-image'
-      .d-flex.justify-content-between.align-items-between
-        .description.font-weight-lighter
-          = post.description
-        .description.text-muted
-          = post.likes.count
-          %i.fas.fa-heart
-          = post.comments.count
-          %i.fas.fa-comment-alt
+.container.mx-auto{:style => "width: 650px;"}
 
+  - @posts.each do |post|
+
+    .card-header{:style => "width: 600px;"}
+      = link_to user_path(post.user), {style: 'color:#262626;'} do
+        %img{ src: post.user.profile.photo_url, height: '30px', width: 'auto' }
+        = post.user.nickname
+
+    .card{:style => "width: 600px;"}
+      = link_to post_path(post) do
+        = image_tag post.image, class: 'card-img-top'
+
+
+      .card-body
+        %p.card-text
+          .d-flex.justify-content-between.align-items-between
+            .text-md
+              = post.description
+            .text-muted
+              = post.likes.count
+              %i.fas.fa-heart
+              = post.comments.count
+              %i.fas.fa-comment-alt
+    %br
+      %br
