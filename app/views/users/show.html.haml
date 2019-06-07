@@ -9,10 +9,11 @@
       .user-wrapper
         %h2.username= @user.nickname
 
-        - if @user.id == current_user.id
-          %a.edit-profile
-            %a.edit-profile{href: edit_profile_path(current_user.profile)}
-              %button Edit Profile
+
+
+        = render 'friendbutton'
+
+
 
       %ul.posts
         %li

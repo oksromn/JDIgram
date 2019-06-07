@@ -13,7 +13,9 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.8.1'
 gem 'searchkick'
-gem 'bulma-rails'
+
+gem 'has_friendship'
+
 
 gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'

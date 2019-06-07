@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :subscriptions
   has_many :chats, through: :subscriptions
 
-
+  has_friendship
 
   private
     def build_default_profile

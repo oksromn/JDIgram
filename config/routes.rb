@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   root to: 'homes#index'
   resources :users do
+    get :create_friend_request, on: :member
+    get :destroy_friend_request, on: :member
+    get :accept_friend_request, on: :member
+    get :remove_friend, on: :member
     resources :chats
   end
 
