@@ -30,11 +30,6 @@
             .about{class: 'font-weight-lighter'}= @user.profile.about
 
 
-        %p.card-text
-          %small.text-muted
-            = @user.last_sign_in_at
-            = current_user.current_sign_in_at
-
 .user-tabs
   %a.tab.active{href: '#'}
     Posts
@@ -50,63 +45,3 @@
     .container{style: 'width: auto'}
       = link_to post_path(post) do
         = image_tag post.image, style: 'height: 200px; width: auto'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--#.user-profile
--#  .profile.row
--#    .col-md-4.avatar
--#      .wrapper
--#        - if @user.profile.photo?
--#          = image_tag @user.profile.photo_url(:thumb), class: 'rounded', style: 'height: 200px; width: auto;'
--#
--#    .col-md-8.basic-info
--#      .user-wrapper
--#        %h2.username= @user.nickname
--#
--#        = render 'friendbutton'
--#
--#      %ul.posts
--#        %li
--#          %span= @user.posts.count
--#          posts
--#        %li
--#          %span 195
--#          followers
--#        %li
--#          %span 345
--#          following
--#
--#      - if @user.profile.firstname? && @user.profile.secondname?
--#        %h2.name= @user.profile.firstname + ' ' + @user.profile.secondname
--#        %a.about= @user.profile.about
--#
--#
--#%br
--#%br
--#  %br
--#.user-tabs
--#  %a.tab.active{href: '#'}
--#    Posts
--#  %a.tab{href: '#'}
--#    Liked
--#  %a.tab{href: '#'}
--#    Saved
--#
--#.user-images
--#  - @posts.each do |post|
--#    .wrapper
--#      = link_to post_path(post) do
--#        = image_tag post.image
