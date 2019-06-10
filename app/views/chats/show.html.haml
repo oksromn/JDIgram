@@ -9,7 +9,8 @@
     .card-body
       %blockquote.blockquote.mb-0
         -# if @chat.messages.any?
-        %p= render partial: 'messages/message', collection: @chat.messages.order(created_at: :asc)
+        #chatbox
+          = render partial: 'messages/message', collection: @chat.messages.order(created_at: :asc)
 
 
   %br

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'chats/index'
-  get 'chats/create'
-  get 'chats/show'
+  resources :chats
   resources :profiles
   resources :homes
 

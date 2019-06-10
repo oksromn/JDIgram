@@ -1,8 +1,8 @@
-#chatbox
-  %span.font-weight-lighter
-    = message.created_at.strftime('%I:%M ')
-  %span.font-italic.font-weight-light
-    = message.user.nickname
-  %span :
-  = message.content
-  %br
+
+%span.font-weight-lighter
+  = message.created_at.strftime('%I:%M ')
+%span.font-italic.font-weight-light
+  = message.user.nickname
+%span :
+= message.content
+%br
