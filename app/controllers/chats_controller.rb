@@ -4,6 +4,7 @@ class ChatsController < ApplicationController
 
   def index
     @chats = current_user.chats
+    @myfriends = current_user.friends
   end
 
 
@@ -49,4 +50,3 @@ class ChatsController < ApplicationController
 
 
 end
-

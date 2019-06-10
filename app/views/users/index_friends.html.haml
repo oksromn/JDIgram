@@ -1,14 +1,15 @@
 .text-center
   %h5 My friends
-.card-group
-  - @myfriends.each do |myfriend|
-    .container.text-center{ style:  'width: 350px;' }
-      .card.shadow.p-3.mb-5.bg-white.rounded{style: "margin: 15px;"}
-        = link_to user_path(myfriend) do
-          %img.card-img-top{src: myfriend.profile.photo, style: 'height: 200px; width: auto'}
-        .card-body
-          %p.card-text
-            = myfriend.nickname
+  .card-group
+    - @myfriends.each do |myfriend|
+      .container.text-center{ style:  'width: 350px;' }
+        .card.shadow.p-3.mb-5.bg-white.rounded{style: "margin: 15px;"}
+          = link_to user_path(myfriend) do
+            %img.card-img-top{src: myfriend.profile.photo, style: 'height: 200px; width: auto'}
+          .card-body
+            %p.card-text
+              = myfriend.nickname
+
 
 .text-center
   %h5 Requests
@@ -20,6 +21,3 @@
         .card-body
           %p.card-text
             = myrequest.nickname
-
-
-

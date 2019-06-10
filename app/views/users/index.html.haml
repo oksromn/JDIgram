@@ -1,10 +1,10 @@
-- @users.each do |user|
-  .users-show.row
-    .col-md-4
-      .user
-        .avatar
-          - if user.profile.photo?
-            = link_to user_path(user) do
-              = image_tag user.profile.photo_url
-        = link_to user.nickname, user_path(user), class: 'username'
-
+.container.text-center
+  - @users.each do |user|
+    .users-show.row
+      .col-md-5
+        .user
+          .avatar
+            - if user.profile.photo?
+              = link_to user_path(user) do
+                = image_tag user.profile.photo_url
+          = link_to user.nickname, user_path(user), class: 'username'

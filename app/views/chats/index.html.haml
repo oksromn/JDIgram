@@ -1,7 +1,23 @@
-All Users:
-%ul
+.container.text-center
+  My Friedns:
+  - @myfriends.each do |myfriend|
+    .users-show.row
+      .col-md-5
+        .user
+          .avatar
+            - if myfriend.profile.photo?
+              = link_to user_path(myfriend) do
+                = image_tag myfriend.profile.photo_url
+          = link_to myfriend.nickname, user_path(myfriend), class: 'username'
+
+  %br
+  %br
+
+  All Users:
+  %br
+  %br
   - User.all.each do |other_user|
     - if other_user != current_user
-      %li
-        = link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do
-          = other_user.nickname
+      = link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do
+        = other_user.nickname
+        %br
