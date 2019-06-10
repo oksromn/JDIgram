@@ -28,7 +28,7 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-
+  config.action_cable.mount_path = "/cable"
   config.action_cable.url = "ws://localhost:3000/cable"
 
   # Store uploaded files on the local file system (see config/storage.yml for options)

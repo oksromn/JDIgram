@@ -1,14 +1,14 @@
 .container.text-center
-  My Friedns:
-  - @myfriends.each do |myfriend|
-    .users-show.row
-      .col-md-5
-        .user
-          .avatar
-            - if myfriend.profile.photo?
-              = link_to user_path(myfriend) do
-                = image_tag myfriend.profile.photo_url
-          = link_to myfriend.nickname, user_path(myfriend), class: 'username'
+  -# My Friedns:
+  -# - @myfriends.each do |myfriend|
+  -#   .users-show.row
+  -#     .col-md-5
+  -#       .user
+  -#         .avatar
+  -#           - if myfriend.profile.photo?
+  -#             = link_to (user_chats_path(current_user, :other_user => myfriend), method: :post) do
+  -#               = image_tag myfriend.profile.photo_url
+  -#             = link_to myfriend.nickname, user_path(myfriend), class: 'username'
 
   %br
   %br

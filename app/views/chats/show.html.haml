@@ -1,6 +1,6 @@
 .container
 
-  = link_to 'Delete chat', user_chat_path(current_user, @chat, other_user: @other_user.id), method: :delete, data: { confirm: 'Delete comment?'}, class: 'btn btn-outline-danger'
+  = link_to 'Delete chat', user_chat_path(current_user, @chat, other_user: @other_user.id), method: :delete, data: { confirm: 'Delete chat?'}, class: 'btn btn-outline-danger'
   %br
   %br
   .card
