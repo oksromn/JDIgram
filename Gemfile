@@ -12,7 +12,7 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.8.1'
-gem 'searchkick'
+#gem 'searchkick'
 
 gem 'has_friendship'
 
@@ -44,5 +44,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
-
+gem 'tire', '0.6.3', github: 'zaharpecherin/retire', ref: '42fe341059f439c735051d009d8b40a4f64f28e3'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

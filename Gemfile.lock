@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/zaharpecherin/retire.git
+  revision: 42fe341059f439c735051d009d8b40a4f64f28e3
+  ref: 42fe341059f439c735051d009d8b40a4f64f28e3
+  specs:
+    tire (0.6.3)
+      activemodel (>= 3.0)
+      activesupport
+      ansi
+      hashr (~> 0.0.19)
+      multi_json (~> 1.3)
+      rake
+      rest-client (~> 1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,6 +58,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -91,21 +106,11 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    elasticsearch (7.1.0)
-      elasticsearch-api (= 7.1.0)
-      elasticsearch-transport (= 7.1.0)
-    elasticsearch-api (7.1.0)
-      multi_json
-    elasticsearch-transport (7.1.0)
-      faraday
-      multi_json
     erb2haml (0.1.5)
       html2haml
     erubi (1.8.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    faraday (0.15.4)
-      multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
     font-awesome-sass (5.8.1)
       sassc (>= 1.11)
@@ -123,7 +128,7 @@ GEM
     has_friendship (1.1.6)
       rails (>= 4.2.0, < 5.3.0)
       stateful_enum
-    hashie (3.6.0)
+    hashr (0.0.22)
     html2haml (2.2.0)
       erubis (~> 2.7.0)
       haml (>= 4.0, < 6)
@@ -159,7 +164,6 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.10)
     multi_json (1.13.1)
-    multipart-post (2.1.1)
     nio4r (2.3.1)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
@@ -204,6 +208,8 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rmagick (2.16.0)
     ruby_dep (1.5.0)
     ruby_parser (3.13.1)
@@ -229,10 +235,6 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    searchkick (4.0.1)
-      activemodel (>= 5)
-      elasticsearch (>= 6)
-      hashie
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -300,10 +302,10 @@ DEPENDENCIES
   rb-readline
   rmagick
   sass-rails (~> 5.0)
-  searchkick
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  tire (= 0.6.3)!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

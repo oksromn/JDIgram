@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     if params[:q].present?
-      @users = User.search(params[:q])
+      @users = User.search(params[:q], load: true)
     else
       @users = User.all.order(created_at: :desc)
     end

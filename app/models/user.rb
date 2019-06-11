@@ -1,5 +1,10 @@
 class User < ApplicationRecord
 
+  self.include_root_in_json = false
+  include Tire::Model::Search
+  include Tire::Model::Callbacks
+
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -11,7 +16,7 @@ class User < ApplicationRecord
 
   validates :nickname, presence: true
 
-  searchkick
+  #searchkick
 
   has_many :messages
   has_many :subscriptions
@@ -19,10 +24,32 @@ class User < ApplicationRecord
 
   has_friendship
 
+
+
+
+
+  tire do
+    mapping do
+      indexes :nickname, type: 'string'
+      indexes :profile do
+        indexes :firstname, type: 'string'
+        indexes :secondname, type: 'string'
+      end
+    end
+  end
+
+
+  def to_indexed_json
+    to_json( include: { profile: { only: [:firstname, :secondname] } } )
+  end
+
+
   private
     def build_default_profile
       build_profile
       true
     end
+
+
 
 end
