@@ -3,15 +3,17 @@
   = link_to 'Delete chat', user_chat_path(current_user, @chat, other_user: @other_user.id), method: :delete, data: { confirm: 'Delete chat?'}, class: 'btn btn-outline-danger'
   %br
   %br
+
+  %br
+  = render partial: 'messages/message_form', locals: {message: @message, chat: @chat}
   .card
     .card-header
       Chat with @#{@other_user.nickname}
     .card-body
       %blockquote.blockquote.mb-0
         -# if @chat.messages.any?
+
         #chatbox
-          = render partial: 'messages/message', collection: @chat.messages.order(created_at: :asc)
+          = render partial: 'messages/message', collection: @chat.messages.order(created_at: :desc)
 
 
-  %br
-  = render partial: 'messages/message_form', locals: {message: @message, chat: @chat}

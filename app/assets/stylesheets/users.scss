@@ -4,10 +4,6 @@
     height: 140px;
     margin: 40px auto;
   }
-  .wrapper img{
-    width: 100%;
-    border-radius: 50%;
-  }
 }
 
 .profile .basic-info{
@@ -110,9 +106,9 @@ a.tab{
       height: 40px;
       margin: 8px;
       img {
-        width: 100%;
-        height: 100%;
-        border: 1px solid #efefef;
+        object-fit: cover;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
       }
     }

@@ -1,39 +1,45 @@
-.signincontainer
+.my-2.mx-auto{style: "width: 700px;"}
   = form_for @profile do |f|
+    .d-inline-flex
+      .shadow-lg.p-3.mb-5.bg-white.rounded.font-weight-lighter
+        .field
+          %br
+          = f.label :firstname
+          %br
+          = f.text_field :firstname, autofocus: true
 
-    .field
-      %br
-      = f.label :firstname
-      %br
-      = f.text_field :firstname, autofocus: true
+        .field
+          %br
+          = f.label :secondname
+          %br
+          = f.text_field :secondname, autofocus: true
 
-    .field
-      %br
-      = f.label :secondname
-      %br
-      = f.text_field :secondname, autofocus: true
+        .field
+          %br
+          = f.label :birthday
+          %br
+          = f.date_select :birthday, autofocus: true
 
-    .field
-      %br
-      = f.label :birthday
-      %br
-      = f.date_select :birthday, autofocus: true
+        .field
+          %br
+          = f.label :about
+          %br
+          = f.text_area :about, autofocus: true, size: '30x3'
 
-    .field
-      %br
-      = f.label :about
-      %br
-      = f.text_area :about, autofocus: true, size: '30x3'
+        .actions
+          %br
+          = f.submit "Update", class: "btn btn-primary"
 
-    .field
-      %br
-      Photo
-      %br
-      = f.file_field :photo, :onchange => "readURL(this)"
-      %br
-      %br
-      %img#img_prev
+    .d-inline-flex{style: "padding-left: 40px;"}
+      .field
+        %br
+        Profile Photo
+        %br
+        %br
+        = f.file_field :photo, :onchange => "readURL(this)"
+        %br
+        %br
+        .rounded.mx-auto
+          %img#img_prev{height: 'auto', width: '250px', class: 'shadow p-3 mb-5 bg-white rounded'}
 
-    .actions
-      %br
-      = f.submit "Update", class: "btn btn-primary"
+

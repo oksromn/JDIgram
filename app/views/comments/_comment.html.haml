@@ -1,14 +1,15 @@
-.mx-auto{:style => "width: 575px;"}
-  .container
-    .d-flex.justify-content-between.align-items-center
-      .card{:style => "width: 505px;"}
-        .card-header
-          = link_to user_path(comment.user), {style: 'color: gray;'} do
-            = comment.user.nickname
-        .card-body
-          .d-flex.justify-content-between.align-items-center
-            .card-text
-              = comment.comment
-            - if current_user.id == comment.user.id
-              = link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Delete comment?'}, class: 'btn btn-outline-dark btn-sm'
+#comment
+  .mx-auto{:style => "width: 575px;"}
+    .container
+      .d-flex.justify-content-between.align-items-center
+        .card{:style => "width: 505px;"}
+          .card-header
+            = link_to user_path(comment.user), {style: 'color: gray;'} do
+              = comment.user.nickname
+          .card-body
+            .d-flex.justify-content-between.align-items-center
+              .card-text
+                = comment.comment
+              - if current_user.id == comment.user.id
+                = link_to 'Delete', [comment.post, comment], remote: true, method: :delete, data: { confirm: 'Delete comment?'}, class: 'btn btn-outline-dark btn-sm deletecomment'
 %br

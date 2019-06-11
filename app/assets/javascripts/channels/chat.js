@@ -7,7 +7,7 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
   },
   received: function(data) {
     var messages = $('#chatbox');
-    messages.append(data['message']);
+    messages.prepend(data['message']);
   },
 
 });

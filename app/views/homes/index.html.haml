@@ -9,7 +9,7 @@
 
     .card-header{:style => "width: 600px;"}
       = link_to user_path(post.user), {style: 'color:#262626;'} do
-        %img{ src: post.user.profile.photo_url, height: '30px', width: 'auto' }
+        %img{ src: post.user.profile.photo_url, height: '30px', width: 'auto'}
         = post.user.nickname
 
     .card{:style => "width: 600px;"}
@@ -29,3 +29,5 @@
               %i.fas.fa-comment-alt
     %br
       %br
+
+%button.btn.btn-outline-secondary.w-25#toTop{:type => "button"} Scroll

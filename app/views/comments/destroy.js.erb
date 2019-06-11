@@ -1,0 +1,6 @@
+$('.deletecomment').bind('ajax:success', function() {
+  $(this).closest('#comment').fadeOut();
+});
+
+var likes = document.querySelector("#likes");
+likes.innerHTML = "<%= j render partial: 'posts/likescount' %>";

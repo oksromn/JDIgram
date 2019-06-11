@@ -1,9 +1,9 @@
-.signincontainer
+.text-center.my-5.mx-auto{style: 'width: 500px;'}
   = form_for ([@post, Comment.new]) do |f|
     .input-group
       .input-group-prepend
         %span.input-group-text Comment
-        = f.text_area :comment, class: 'form-control', size: '60x3'
+        = f.text_area :comment, class: 'form-control', size: '80x3'
     .action
       %br
       = f.submit 'Create comment', class: 'btn btn-primary'

@@ -60,3 +60,11 @@
 #chatbox {
   overflow: scroll;
 }
+
+#toTop {
+  text-align: center;
+  position: fixed;
+  top: 100px;
+  left: 60px;
+  display: none;
+}
