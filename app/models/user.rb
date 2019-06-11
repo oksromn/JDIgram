@@ -10,13 +10,12 @@ class User < ApplicationRecord
 
   has_one :profile
   before_create :build_default_profile
+  after_touch() { tire.update_index }
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   validates :nickname, presence: true
-
-  #searchkick
 
   has_many :messages
   has_many :subscriptions
@@ -25,16 +24,11 @@ class User < ApplicationRecord
   has_friendship
 
 
-
-
-
-  tire do
-    mapping do
-      indexes :nickname, type: 'string'
-      indexes :profile do
-        indexes :firstname, type: 'string'
-        indexes :secondname, type: 'string'
-      end
+  mapping do
+    indexes :nickname, type: 'string'
+    indexes :profile do
+      indexes :firstname, type: 'string'
+      indexes :secondname, type: 'string'
     end
   end
 

@@ -12,8 +12,6 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'font-awesome-sass', '~> 5.8.1'
-#gem 'searchkick'
-
 gem 'has_friendship'
 
 
