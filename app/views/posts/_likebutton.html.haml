@@ -1,0 +1,5 @@
+- pre_like = @post.likes.find { |like| like.user_id == current_user.id }
+- if pre_like
+  = link_to 'Unlike', post_like_path(@post, pre_like), remote: true, method: :delete, class: 'btn btn-outline-dark'
+- else
+  = link_to 'Like', post_likes_path(@post), remote: true, method: :post, class: 'btn btn-outline-dark'

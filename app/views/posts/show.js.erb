@@ -1,0 +1,8 @@
+var likes = document.querySelector("#likes");
+
+likes.innerHTML = "<%= j render partial: 'posts/likescount' %>";
+
+
+var likebutton = document.querySelector("#likebutton");
+
+likebutton.innerHTML = "<%= j render partial: 'posts/likebutton' %>";

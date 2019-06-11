@@ -15,11 +15,8 @@
 
             .btn-group
               .btn-outline-secondary{:style => "margin-right: 10px;"}
-                - pre_like = @post.likes.find { |like| like.user_id == current_user.id}
-                - if pre_like
-                  = link_to 'Unlike', post_like_path(@post, pre_like), method: :delete, class: 'btn btn-outline-dark'
-                - else
-                  = link_to 'Like', post_likes_path(@post), method: :post, class: 'btn btn-outline-dark'
+                #likebutton
+                  = render 'likebutton'
 
               .btn-outline-secondary{:style => "margin-right: 10px;"}
                 =link_to 'Comment', new_post_comment_path(@post), method: :get, class: 'btn btn-outline-dark'
@@ -29,11 +26,8 @@
                   = link_to 'Remove', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-dark'
 
 
-            .text-muted
-              = @post.likes.count
-              %i.fas.fa-heart
-              = @post.comments.count
-              %i.fas.fa-comment-alt
+            .text-muted#likes
+              = render 'likescount'
 
 = render @post.comments
 
