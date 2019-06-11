@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   def create_friend_request
     current_user.friend_request(@user)
     flash[:notice] = 'Request Send'
-    #@friendship = HasFriendship::Friendship.find_by(friendable_id: current_user, friend_id: @user)
     redirect_to user_path(@user)
   end
 

@@ -6,7 +6,4 @@ class Chat < ApplicationRecord
 
   validates :identifier, presence: true, uniqueness: true, case_sensitive: false
 
-  #after_create_commit { MessageBroadcastJob.perform_later self }
-
-
 end
